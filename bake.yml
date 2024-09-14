@@ -1,0 +1,21 @@
+main:
+  src: src/main.cpp
+  output: main
+  libs:
+    - lua
+    - lua++
+  linkWith:
+    - core.o
+  dependsOn:
+    - core
+
+core:
+  src: src/core.cpp
+  output: core.o
+  libs:
+    - lua
+    - lua++
+  extraFlags:
+    - fPIC
+    - O3
+    - c
